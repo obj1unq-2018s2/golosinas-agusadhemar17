@@ -54,6 +54,6 @@ object mariano {
 	}//Debe devolver las golosinas que están entre las  golosinasDeseadas , y que Mariano no compró.
  	method gustosFaltantes(gustosDeseados){
  		return gustosDeseados.difference(golosinasCompradas.map({golosina=> golosina.gusto()})
- 	}  //gustosDeseados.difference(self.sabores())
+ 	}  
 }
  
