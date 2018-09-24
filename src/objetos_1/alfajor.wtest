@@ -1,28 +1,53 @@
 import golosinas.*
 
 describe "test de alfajor" {
-
-	test "peso inicial" {
-		assert.equals(300, alfajor.peso())
+	var alfajorcito = new Alfajor() 
+	var triple = new Alfajor() 
+	test "peso inicial alfajorcito" {
+		assert.equals(300, alfajorcito.peso())
 	}
 	
-	test "precio" {
-		assert.equals(12, alfajor.precio())
+	test "precio alfajorcito" {
+		assert.equals(12, alfajorcito.precio())
 	}
 	
-	test "mordiscos" {
-		alfajor.mordisco()
-		assert.equals(240, alfajor.peso())
-		alfajor.mordisco()
-		assert.equals(192, alfajor.peso())
+	test "mordiscos a alfajorcito" {
+		alfajorcito.mordisco()
+		assert.equals(240, alfajorcito.peso())
+		alfajorcito.mordisco()
+		assert.equals(192, alfajorcito.peso())
 	}
 	
-	test "gusto" {
-		assert.equals("chocolate", alfajor.gusto())
+	test "gusto alfajorcito" {
+		assert.equals("chocolate", alfajorcito.gusto())
 	}
 	
-	test "libre de gluten" {
-		assert.notThat(alfajor.libreGluten())	
+	test "libre de gluten alfajorcito" {
+		assert.notThat(alfajorcito.libreGluten())	
+	}
+	
+//triple 
+	test "peso inicial triple" {
+		assert.equals(300, triple.peso())
+	}
+	
+	test "precio triple" {
+		assert.equals(12, triple.precio())
+	}
+	
+	test "mordiscos a triple" {
+		triple.mordisco()
+		assert.equals(240, triple.peso())
+		triple.mordisco()
+		assert.equals(192, triple.peso())
+	}
+	
+	test "gusto triple" {
+		assert.equals("chocolate", triple.gusto())
+	}
+	
+	test "libre de gluten triple" {
+		assert.notThat(triple.libreGluten())	
 	}
 	
 }

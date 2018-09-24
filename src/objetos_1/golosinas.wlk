@@ -1,4 +1,4 @@
-object bombon {
+class Bombon {
 	var peso = 15
 	
 	method precio() { 
@@ -18,7 +18,7 @@ object bombon {
 	}
 }
 
-object alfajor {
+class Alfajor {
 	var peso = 300
 	
 	method precio() { 
@@ -38,7 +38,7 @@ object alfajor {
 	}
  }
 
-object caramelo {
+class Caramelo {
 	var peso = 5
 	
 	method precio() { 
@@ -58,7 +58,7 @@ object caramelo {
 	}// definir
 }
 
-object chupetin {/*Vale 2 pesos y pesa inicialmente 7 gramos. Su gusto es naranja. Es libre de gluten.
+class Chupetin {/*Vale 2 pesos y pesa inicialmente 7 gramos. Su gusto es naranja. Es libre de gluten.
  *  Cuando recibe un mordisco, pierde el 10 % de su peso, a excepción de que su peso actual 
  * sea menor a 2 gramos: en tal caso, no pierde nada. */
 	var peso = 7
@@ -80,7 +80,7 @@ object chupetin {/*Vale 2 pesos y pesa inicialmente 7 gramos. Su gusto es naranj
 	}// definir
 }
 
-object oblea {
+class Oblea {
 
 	var peso = 250
 	
@@ -101,7 +101,7 @@ object oblea {
 	}// definir
 }
 
-object chocolatin {	// hay que acordarse de *dos* cosas, el peso inicial y el peso actual
+class Chocolatin {	// hay que acordarse de *dos* cosas, el peso inicial y el peso actual
 	// el precio se calcula a partir del precio inicial
 	// el mordisco afecta al peso actual
 	var pesoInicial
@@ -129,7 +129,7 @@ object chocolatin {	// hay que acordarse de *dos* cosas, el peso inicial y el pe
 	}
 }
 
-object golosinaBaniada {/*El peso inicial es el de la golosina de base más 4 gramos que es 
+class GolosinaBaniada {/*El peso inicial es el de la golosina de base más 4 gramos que es 
  * lo que pesa el bañado. 
  * El precio es el de la golosina de base más 2 pesos. 
  * El gusto es el de la golosina de base. De la misma manera, es libre de gluten si lo es su golosina base.
@@ -160,8 +160,7 @@ object golosinaBaniada {/*El peso inicial es el de la golosina de base más 4 gr
 	}	
 }
 
-
-object tuttifrutti {
+class Tuttifrutti {
 	var peso = 5
 	var property conGluten = false
 	var sabores = ["frutilla","chocolate","naranja"]
@@ -185,10 +184,6 @@ object tuttifrutti {
 	method libreGluten() { 
 		return conGluten /* completar */
 	}
-}/*Pesa inicialmente 5 gramos. La pastilla puede ser libre de gluten o no (se configura). 
-	 * Si es libre de gluten el precio es $7; si no, es de $10.
- En cada mordisco cambia el sabor, pasa de frutilla a chocolate, 
- * de ahí a naranja, de ahí vuelve a frutilla. */
-	 // como manejar el cambio de sabor ??
+}
 
 

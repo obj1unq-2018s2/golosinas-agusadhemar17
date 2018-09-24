@@ -1,28 +1,54 @@
 import golosinas.*
 
 describe "test de bombon" {
-
+	var bonOBon = new Bombon(peso=30)
+	var marroc= new Bombon()
 	test "peso inicial" {
-		assert.equals(15, bombon.peso())
+		assert.equals(30, bonOBon.peso())
 	}
 	
-	test "precio" {
-		assert.equals(5, bombon.precio())
+	test "precio bonOBon" {
+		assert.equals(5, bonOBon.precio())
 	}
 	
-	test "mordiscos" {
-		bombon.mordisco()
-		assert.equals(11, bombon.peso())
-		bombon.mordisco()
-		assert.equals(7.8, bombon.peso())
+	test "mordiscos bonOBon" {
+		bonOBon.mordisco()
+		assert.equals(23, bonOBon.peso())
+		bonOBon.mordisco()
+		assert.equals(17.4, bonOBon.peso())
 	}
 	
-	test "gusto" {
-		assert.equals("frutilla", bombon.gusto())
+	test "gusto bonOBon" {
+		assert.equals("frutilla", bonOBon.gusto())
 	}
 	
-	test "libre de gluten" {
-		assert.that(bombon.libreGluten())	
+	test "libre de gluten bonOBon" {
+		assert.that(bonOBon.libreGluten())	
+	}
+
+//MARROC
+
+test "peso inicial marroc" {
+		assert.equals(15, marroc.peso())
+	}
+	
+	test "precio marroc" {
+		assert.equals(5, marroc.precio())
+	}
+	
+	test "mordiscos marroc" {
+		marroc.mordisco()
+		assert.equals(11, marroc.peso())
+		marroc.mordisco()
+		assert.equals(7.8, marroc.peso())
+	}
+	
+	test "gusto marroc" {
+		assert.equals("frutilla", marroc.gusto())
+	}
+	
+	test "libre de gluten marroc" {
+		assert.that(marroc.libreGluten())	
 	}
 	
 
