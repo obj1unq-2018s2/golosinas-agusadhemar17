@@ -1,3 +1,15 @@
+//Esta bien el pasaje de objetos a clases,
+//Lo que al cambiar todas las clases, tendrias
+// que haber refactorizado todos los test,
+// Como en la parta enterior, tambien te quedo
+// desactualizado los test mariano.
+// Osea el mensaje golosinas() no se llama mas asi por ejemplo.
+// sin embargo, el alfajor lo testeaste bien, asi que se que
+// podes testear los otros, asumo fue cuestion de tiempo,
+// que no lo hayas actualizado.
+// fijate que las correcciones del test de mariano
+// estan en el branch master asi no repito todo de nuevo.
+
 class Bombon {
 	var peso = 15
 	
