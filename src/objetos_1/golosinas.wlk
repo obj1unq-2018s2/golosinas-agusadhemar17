@@ -1,3 +1,4 @@
+// Esto esta bien, test completo.
 object bombon {
 	var peso = 15
 	
@@ -18,6 +19,7 @@ object bombon {
 	}
 }
 
+// Esto esta bien, test completo.
 object alfajor {
 	var peso = 300
 	
@@ -38,6 +40,7 @@ object alfajor {
 	}
  }
 
+// Esto esta bien, test completo.
 object caramelo {
 	var peso = 5
 	
@@ -58,6 +61,7 @@ object caramelo {
 	}// definir
 }
 
+// Esto esta bien, test completo.
 object chupetin {/*Vale 2 pesos y pesa inicialmente 7 gramos. Su gusto es naranja. Es libre de gluten.
  *  Cuando recibe un mordisco, pierde el 10 % de su peso, a excepción de que su peso actual 
  * sea menor a 2 gramos: en tal caso, no pierde nada. */
@@ -80,6 +84,7 @@ object chupetin {/*Vale 2 pesos y pesa inicialmente 7 gramos. Su gusto es naranj
 	}// definir
 }
 
+// Esto esta bien, test completo.
 object oblea {
 
 	var peso = 250
@@ -101,6 +106,7 @@ object oblea {
 	}// definir
 }
 
+// Esto esta bien, test completo.
 object chocolatin {	// hay que acordarse de *dos* cosas, el peso inicial y el peso actual
 	// el precio se calcula a partir del precio inicial
 	// el mordisco afecta al peso actual
@@ -129,6 +135,7 @@ object chocolatin {	// hay que acordarse de *dos* cosas, el peso inicial y el pe
 	}
 }
 
+// Esto esta bien, test completo.
 object golosinaBaniada {/*El peso inicial es el de la golosina de base más 4 gramos que es 
  * lo que pesa el bañado. 
  * El precio es el de la golosina de base más 2 pesos. 
@@ -160,7 +167,7 @@ object golosinaBaniada {/*El peso inicial es el de la golosina de base más 4 gr
 	}	
 }
 
-
+// Esto esta bien, test completo.
 object tuttifrutti {
 	var peso = 5
 	var property conGluten = false

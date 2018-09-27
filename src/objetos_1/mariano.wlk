@@ -22,8 +22,10 @@ object mariano {
 		cambiar por la implementacion correcta 
 		return [] 
 	}*/
+	
+	// Aca el parentesis estaba mal puesto.
 	method probarGolosinas() { 
-	 	return golosinasCompradas.forEach({golosina => golosina.mordisco())} /* completar */ }
+	 	return golosinasCompradas.forEach({golosina => golosina.mordisco()}) /* completar */ }
 	 
 	method hayGolosinaSinTACC(){ // indica si hay al menos una golosina sin gluten en la bolsa de golosinas compradas.
 		return golosinasCompradas.any({golosina=> golosina.libreGluten()})
@@ -46,14 +48,18 @@ object mariano {
 	method golosinaMasCara(){// devuelve la golosina mas cara en la bolsa de golosinas compradas.
 		return golosinasCompradas.max({golosina=> golosina.precio()})
 	}
+		// esto podria ser golosinasCompradas.sum({golosina => golosina.peso()})
 	method pesoGolosinas(){ //devuelve el peso de la bolsa de golosinas compradas, o sea, la suma del peso de cada golosina.
 		return golosinasCompradas.map({golosina=> golosina.peso()}.sum())
 	}
 	method golosinasFaltantes(golosinasDeseadas){
 		return golosinasDeseadas.difference(golosinasCompradas)
 	}//Debe devolver las golosinas que están entre las  golosinasDeseadas , y que Mariano no compró.
+ 	
+ 	//Falto un Parentesis para que compile, controla eso para que
+ 	//no falle el codigo.
  	method gustosFaltantes(gustosDeseados){
- 		return gustosDeseados.difference(golosinasCompradas.map({golosina=> golosina.gusto()})
+ 		return gustosDeseados.difference(golosinasCompradas.map({golosina=> golosina.gusto()}))
  	}  
 }
  
