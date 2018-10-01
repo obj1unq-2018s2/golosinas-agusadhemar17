@@ -18,7 +18,7 @@ object mariano {
 	}
 	
 	method probarGolosinas() { 
-	 	return golosinasCompradas.forEach({golosina => golosina.mordisco())}) 
+	 	return golosinasCompradas.forEach({golosina => golosina.mordisco()}) 
 	}
 	 
 	method hayGolosinaSinTACC(){ // indica si hay al menos una golosina sin gluten en la bolsa de golosinas compradas.
@@ -41,13 +41,13 @@ object mariano {
 		return golosinasCompradas.max({golosina=> golosina.precio()})
 	}
 	method pesoGolosinas(){ 
-		return golosinasCompradas.map({golosina=> golosina.peso()}.sum())
+		return golosinasCompradas.map({golosina=> golosina.peso()}).sum()
 	}
 	method golosinasFaltantes(golosinasDeseadas){
-		return golosinasDeseadas.difference(golosinasCompradas)
+		return golosinasDeseadas.asSet().difference(golosinasCompradas)
 	}
  	method gustosFaltantes(gustosDeseados){
- 		return gustosDeseados.difference(golosinasCompradas.map({golosina=> golosina.gusto()}))
+ 		return gustosDeseados.asSet().difference(golosinasCompradas.map({golosina=> golosina.gusto()}))
  	}
   
 
