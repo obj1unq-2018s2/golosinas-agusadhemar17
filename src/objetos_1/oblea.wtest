@@ -1,30 +1,57 @@
 import golosinas.*
 
 describe "test de oblea" {
-
-	test "peso inicial" {
-		assert.equals(250, oblea.peso())
+	var obleita = new Oblea()
+	var oblea_frut = new Oblea()
+	
+	test "peso inicial obleita" {
+		assert.equals(250, obleita.peso())
 	}
 	
-	test "precio" {
-		assert.equals(5, oblea.precio())
+	test "precio obleita" {
+		assert.equals(5, obleita.precio())
 	}
 	
-	test "mordiscos" {
-		oblea.mordisco()
-		assert.equals(125, oblea.peso())
-		oblea.mordisco()
-		assert.equals(62.5, oblea.peso())
-		oblea.mordisco()
-		assert.equals(46.875, oblea.peso())
+	test "mordiscos obleita" {
+		obleita.mordisco()
+		assert.equals(125, obleita.peso())
+		obleita.mordisco()
+		assert.equals(62.5, obleita.peso())
+		obleita.mordisco()
+		assert.equals(46.875, obleita.peso())
 	}
 	
-	test "gusto" {
-		assert.equals("vainilla", oblea.gusto())
+	test "gusto obleita" {
+		assert.equals("vainilla", obleita.gusto())
 	}
 	
-	test "libre de gluten" {
-		assert.notThat(oblea.libreGluten())	
+	test "libre de gluten obleita" {
+		assert.notThat(obleita.libreGluten())	
 	}
 	
+	//// oblea_frut
+		test "peso inicial oblea_frut" {
+		assert.equals(250, oblea_frut.peso())
+	}
+	
+	test "precio oblea_frut" {
+		assert.equals(5, oblea_frut.precio())
+	}
+	
+	test "mordiscos oblea_frut" {
+		oblea_frut.mordisco()
+		assert.equals(125, oblea_frut.peso())
+		oblea_frut.mordisco()
+		assert.equals(62.5, oblea_frut.peso())
+		oblea_frut.mordisco()
+		assert.equals(46.875, oblea_frut.peso())
+	}
+	
+	test "gusto oblea_frut" {
+		assert.equals("vainilla", oblea_frut.gusto())
+	}
+	
+	test "libre de gluten oblea_frut" {
+		assert.notThat(oblea_frut.libreGluten())	
+	}
 }

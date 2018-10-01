@@ -1,28 +1,56 @@
 import golosinas.*
 
-describe "test de chupetin" {
+describe "test de chupetin bolita" {
+	var bolita = new Chupetin()
+	var picoDulce = new Chupetin()
+	test "peso inicial bolita" {
+		assert.equals(7, bolita.peso())
+	}
+	
+	test "precio bolita" {
+		assert.equals(2, bolita.precio())
+	}
+	
+	test "mordiscos bolita" {
+		bolita.mordisco()
+		assert.equals(6.3, bolita.peso())
+		bolita.mordisco()
+		assert.equals(5.67, bolita.peso())
+	}
+	
+	test "gusto bolita" {
+		assert.equals("naranja", bolita.gusto())
+	}
+	
+	test "libre de gluten bolita" {
+		assert.that(bolita.libreGluten())	
+	}
+	
+	
+//// "test de picoDulce" 
+	
+	test "peso inicial picoDulce" {
+		assert.equals(7, picoDulce.peso())
+	}
+	
+	test "precio picoDulce" {
+		assert.equals(2, picoDulce.precio())
+	}
+	
+	test "mordiscos picoDulce" {
+		picoDulce.mordisco()
+		assert.equals(6.3, picoDulce.peso())
+		picoDulce.mordisco()
+		assert.equals(5.67, picoDulce.peso())
+	}
+	
+	test "gusto  picoDulce" {
+		assert.equals("naranja", picoDulce.gusto())
+	}
+	
+	test "libre de gluten picoDulce" {
+		assert.that(picoDulce.libreGluten())	
+	}
+	
 
-	test "peso inicial" {
-		assert.equals(7, chupetin.peso())
-	}
-	
-	test "precio" {
-		assert.equals(2, chupetin.precio())
-	}
-	
-	test "mordiscos" {
-		chupetin.mordisco()
-		assert.equals(6.3, chupetin.peso())
-		chupetin.mordisco()
-		assert.equals(5.67, chupetin.peso())
-	}
-	
-	test "gusto" {
-		assert.equals("naranja", chupetin.gusto())
-	}
-	
-	test "libre de gluten" {
-		assert.that(caramelo.libreGluten())	
-	}
-	
 }

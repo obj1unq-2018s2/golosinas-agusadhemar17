@@ -1,28 +1,54 @@
 import golosinas.*
 
-describe "test de caramelo" {
-
+describe "test de Suigus" {
+	var suigus = new Caramelo() 
+	var acido = new Caramelo()
 	test "peso inicial" {
-		assert.equals(5, caramelo.peso())
+		assert.equals(5, suigus.peso())
 	}
 	
 	test "precio" {
-		assert.equals(1, caramelo.precio())
+		assert.equals(1, suigus.precio())
 	}
 	
 	test "mordiscos" {
-		caramelo.mordisco()
-		assert.equals(4, caramelo.peso())
-		caramelo.mordisco()
-		assert.equals(3, caramelo.peso())
+		suigus.mordisco()
+		assert.equals(4, suigus.peso())
+		suigus.mordisco()
+		assert.equals(3, suigus.peso())
 	}
 	
 	test "gusto" {
-		assert.equals("frutilla", caramelo.gusto())
+		assert.equals("frutilla", suigus.gusto())
 	}
 	
 	test "libre de gluten" {
-		assert.that(caramelo.libreGluten())	
+		assert.that(suigus.libreGluten())	
+	}
+	
+//--- "test de acidos" --------------------------------------
+	
+	 
+	test "peso inicial acido" {
+		assert.equals(5, acido.peso())
+	}
+	
+	test "precio acido" {
+		assert.equals(1, acido.precio())
+	}
+	
+	test "mordiscos a acido" {
+		acido.mordisco()
+		assert.equals(4, acido.peso())
+		acido.mordisco()
+		assert.equals(3, acido.peso())
+	}
+	test "gusto acido" {
+		assert.equals("frutilla", suigus.gusto())
+	}
+	
+	test "libre de gluten acido" {
+		assert.that(suigus.libreGluten())	
 	}
 	
 }

@@ -1,27 +1,50 @@
 import golosinas.*
 
 describe "test de tuttifrutti" {
-
+	var tutti = new Tuttifrutti()
+	var frutti = new Tuttifrutti()
+	
+	test "peso inicial tutti" {
+		assert.equals(5, tutti.peso())
+	}
+	
+	test "precio tutti" {
+		assert.equals(10, tutti.precio())
+	}
+	test "precioGluten tutti" {
+		tutti.conGluten(true)
+		assert.equals(7, tutti.precio())
+	}
+	
+	test "mordiscos tutti" {
+		tutti.mordisco()
+		assert.equals("frutilla", tutti.gusto())
+		tutti.mordisco()
+		assert.equals("chocolate", tutti.gusto())
+		tutti.mordisco()
+		assert.equals("naranja", tutti.gusto())
+	}
+	
+	////frutti
+	
 	test "peso inicial" {
-		assert.equals(5, tuttifrutti.peso())
+		assert.equals(5, frutti.peso())
 	}
 	
 	test "precio" {
-		assert.equals(10, tuttifrutti.precio())
+		assert.equals(10, frutti.precio())
 	}
 	test "precioGluten" {
-		tuttifrutti.conGluten(true)
-		assert.equals(7, tuttifrutti.precio())
+		frutti.conGluten(true)
+		assert.equals(7, frutti.precio())
 	}
 	
 	test "mordiscos" {
-		tuttifrutti.mordisco()
-		assert.equals("frutilla", tuttifrutti.gusto())
-		tuttifrutti.mordisco()
-		assert.equals("chocolate", tuttifrutti.gusto())
-		tuttifrutti.mordisco()
-		assert.equals("naranja", tuttifrutti.gusto())
-	}
-	
-			
+		frutti.mordisco()
+		assert.equals("frutilla", frutti.gusto())
+		frutti.mordisco()
+		assert.equals("chocolate", frutti.gusto())
+		frutti.mordisco()
+		assert.equals("naranja", frutti.gusto())
+	}		
 }

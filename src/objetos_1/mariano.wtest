@@ -2,33 +2,45 @@ import golosinas.*
 import mariano.*
 
 describe "tests de mariano" {
-
+	var baniadaCrema = new GolosinaBaniada()
+	var baniadachocolate = new GolosinaBaniada()
+	var baniadaDulce = new GolosinaBaniada()
+	var chupetinBaniada = new GolosinaBaniada()
+	var blanco = new Chocolatin ()
+	var negro = new Chocolatin()
+	var tutti = new Tuttifrutti()
+	var bolita = new Chupetin()
+	var suigus = new Caramelo() 
+	var acido = new Caramelo()
+	var bonOBon = new Bombon(peso=30)
+	var marroc= new Bombon()
+	
 	fixture {
-		chocolatin.pesoInicial(100)
-		mariano.comprar(chocolatin)
-		mariano.comprar(caramelo)
-		mariano.comprar(bombon)
+		blanco.pesoInicial(100)
+		mariano.comprar(blanco)
+		mariano.comprar(suigus)
+		mariano.comprar(bonOBon)
 	}
 
 	test "test comprar" {
-		assert.equals(3, mariano.golosinas().size())
-		assert.that(mariano.golosinas().contains(chocolatin))
-		assert.that(mariano.golosinas().contains(caramelo))
-		assert.that(mariano.golosinas().contains(bombon))
-		assert.notThat(mariano.golosinas().contains(chupetin))
+		assert.equals(3, mariano.golosinasCompradas().size())
+		assert.that(mariano.golosinasCompradas().contains(blanco))
+		assert.that(mariano.golosinasCompradas().contains(suigus))
+		assert.that(mariano.golosinasCompradas().contains(bonOBon))
+		assert.notThat(mariano.golosinasCompradas().contains(bolita))
 	}
 	
 	test "probar golosinas" {
 		/* habilitar las lineas anuladas cuando se complete la definicion 
 		 * de las golosinas
 		 */
-//		assert.equals(100, chocolatin.peso())
-//		assert.equals(5, caramelo.peso())
-		assert.equals(15, bombon.peso())
+//		assert.equals(100, bonObon.peso())
+//		assert.equals(5, suigus.peso())
+		assert.equals(30, bonOBon.peso())
 		mariano.probarGolosinas()
-//		assert.equals(98, chocolatin.peso())
-//		assert.equals(4, caramelo.peso())
-		assert.equals(11, bombon.peso())
+//		assert.equals(98, blanco.peso())
+//		assert.equals(4, suigus.peso())
+		assert.equals(23, bonOBon.peso())
 	}
 	
 }

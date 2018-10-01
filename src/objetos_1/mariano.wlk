@@ -4,12 +4,11 @@ object mariano {
 	// para este objeto no damos pistas
 	// definimos algunos métodos para que compile el test
 	const property golosinasCompradas = []
+	var golosinaBaniada = new GolosinaBaniada()
 	
 	method bolsaDeGolosinas(){
 		return golosinasCompradas
-	
 	}
-	
 	method comprar(golosina) { 
 		return golosinasCompradas.add(golosina)
 		/* completar */ 
@@ -18,12 +17,9 @@ object mariano {
 		return golosinasCompradas.remove(unaGolosina)
 	}
 	
-	/*method golosinas() {
-		cambiar por la implementacion correcta 
-		return [] 
-	}*/
 	method probarGolosinas() { 
-	 	return golosinasCompradas.forEach({golosina => golosina.mordisco())} /* completar */ }
+	 	return golosinasCompradas.forEach({golosina => golosina.mordisco())}) 
+	}
 	 
 	method hayGolosinaSinTACC(){ // indica si hay al menos una golosina sin gluten en la bolsa de golosinas compradas.
 		return golosinasCompradas.any({golosina=> golosina.libreGluten()})
@@ -41,19 +37,30 @@ object mariano {
   		return golosinasCompradas.map({golosina=> golosina.gusto()}.asSet())
   	}
   	
- /*P.ej. aunque Mariano tenga tres golosinas de sabor naranja, en lo que devuelve  sabores()  el naranja debería aparecer una sola vez. 
- Una orma de resolver esto es usando conjuntos; revolver en el apunte sobre colecciones y closures: https://objetos1wollokunq.gitlab.io/material/guia-colecciones-basicas.pdf.*/
-	method golosinaMasCara(){// devuelve la golosina mas cara en la bolsa de golosinas compradas.
+ 	method golosinaMasCara(){
 		return golosinasCompradas.max({golosina=> golosina.precio()})
 	}
-	method pesoGolosinas(){ //devuelve el peso de la bolsa de golosinas compradas, o sea, la suma del peso de cada golosina.
+	method pesoGolosinas(){ 
 		return golosinasCompradas.map({golosina=> golosina.peso()}.sum())
 	}
 	method golosinasFaltantes(golosinasDeseadas){
 		return golosinasDeseadas.difference(golosinasCompradas)
-	}//Debe devolver las golosinas que están entre las  golosinasDeseadas , y que Mariano no compró.
+	}
  	method gustosFaltantes(gustosDeseados){
- 		return gustosDeseados.difference(golosinasCompradas.map({golosina=> golosina.gusto()})
- 	}  
-}
- 
+ 		return gustosDeseados.difference(golosinasCompradas.map({golosina=> golosina.gusto()}))
+ 	}
+  
+
+ /*
+Bañar Golosina
+Hacer que Mariano entienda el mensaje  baniar(unaGolosina). 
+* El método construye una nueva golosina bañada y la agrega a la colección de las golosinas que compró Mariano.
+Pensar, haciendo un diagrama de objetos, qué pasa si:
+1.la golosina ya era parte de la colección.
+2.se baña una golosina ya bañada.
+*/
+	method baniarGolosina(golosina){
+		golosinaBaniada.baniaA(golosina)
+		golosinasCompradas.add (golosina)
+	}
+} 

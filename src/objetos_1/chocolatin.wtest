@@ -1,59 +1,61 @@
 import golosinas.*
 
 describe "test de chocolatin" {
+	var blanco = new Chocolatin ()
+	var negro = new Chocolatin()
+	
+	test "peso inicial blanco" {
+		blanco.pesoInicial(40)
+		assert.equals(40, blanco.peso())
+	}
+	
+	test "precio blanco" {
+		blanco.pesoInicial(40)
+		assert.equals(20, blanco.precio())
+	}
+	
+	test "mordiscos blanco" {
+		blanco.pesoInicial(40)
+		blanco.mordisco()
+		assert.equals(38, blanco.peso())
+		blanco.mordisco()
+		assert.equals(36, blanco.peso())
+	}
+	
+	test "gusto blanco" {
+		assert.equals("chocolate", blanco.gusto())
+	}
+	
+	test "libre de gluten blanco" {
+		assert.notThat(blanco.libreGluten())	
+	}
+	
+// describe "negro, peso 100"
 
-	test "peso inicial" {
-		chocolatin.pesoInicial(40)
-		assert.equals(40, chocolatin.peso())
+	test "peso inicial 100 negro" {
+		negro.pesoInicial(100)
+		assert.equals(100, negro.peso())
 	}
 	
-	test "precio" {
-		chocolatin.pesoInicial(40)
-		assert.equals(20, chocolatin.precio())
+	test "precio 100 negro" {
+		negro.pesoInicial(100)
+		assert.equals(50, negro.precio())
 	}
 	
-	test "mordiscos" {
-		chocolatin.pesoInicial(40)
-		chocolatin.mordisco()
-		assert.equals(38, chocolatin.peso())
-		chocolatin.mordisco()
-		assert.equals(36, chocolatin.peso())
+	test "mordiscos100 negro" {
+		negro.pesoInicial(100)
+		negro.mordisco()
+		assert.equals(98, negro.peso())
+		negro.mordisco()
+		assert.equals(96,negro.peso())
 	}
 	
-	test "gusto" {
-		assert.equals("chocolate", chocolatin.gusto())
+	test "gusto100 negro" {
+		assert.equals("chocolate", negro.gusto())
 	}
 	
-	test "libre de gluten" {
-		assert.notThat(chocolatin.libreGluten())	
-	}
-	
-// describe "peso inicial 100"
-
-	test "peso inicial 100" {
-		chocolatin.pesoInicial(100)
-		assert.equals(100, chocolatin.peso())
-	}
-	
-	test "precio 100" {
-		chocolatin.pesoInicial(100)
-		assert.equals(50, chocolatin.precio())
-	}
-	
-	test "mordiscos100" {
-		chocolatin.pesoInicial(100)
-		chocolatin.mordisco()
-		assert.equals(98, chocolatin.peso())
-		chocolatin.mordisco()
-		assert.equals(96, chocolatin.peso())
-	}
-	
-	test "gusto100" {
-		assert.equals("chocolate", chocolatin.gusto())
-	}
-	
-	test "libre de gluten100" {
-		assert.notThat(chocolatin.libreGluten())	
+	test "libre de gluten100 negro" {
+		assert.notThat(negro.libreGluten())	
 	}
 	
 }
