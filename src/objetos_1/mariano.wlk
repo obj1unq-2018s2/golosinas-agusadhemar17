@@ -34,7 +34,7 @@ object mariano {
 		return golosinasCompradas.filter({golosina=> golosina.gusto() == unSabor})
 	}
 	method sabores(){// que devuelve los sabores de las golosinas de la bolsa, idealmente sin repetidos. 
-  		return golosinasCompradas.map({golosina=> golosina.gusto()}.asSet())
+  		return golosinasCompradas.map({golosina=> golosina.gusto()}).asSet()
   	}
   	
  	method golosinaMasCara(){

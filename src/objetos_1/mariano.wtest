@@ -47,7 +47,7 @@ describe "tests de mariano" {
 	}
 	
 	test "Golosinas Faltantes"{
-		assert.equals(#{alfajorcito,marroc,bolita},mariano.golosinasFaltantes([[alfajorcito,marroc,blanco, bolita]))
+		assert.equals(#{alfajorcito,marroc,bolita},mariano.golosinasFaltantes([alfajorcito,marroc,blanco, bolita]))
 		//alfajor, bombon, chocolatin, chupetin
 		
 	}
@@ -66,18 +66,18 @@ describe "tests de mariano" {
 	
 	test " Golosina de un Sabor"{
 		mariano.comprar(alfajorcito)
-		assert.equals([alfajorcito,blanco,suigus,bonOBon],mariano.golosinasCompradas())
+		assert.equals([blanco,suigus,bonOBon,alfajorcito],mariano.golosinasCompradas())
 		assert.equals(blanco,mariano.golosinaDeSabor("chocolate")) 
 	} 
 	test "Golosinas de un Sabor" {
 		mariano.comprar(triple)
-		assert.equals([triple, alfajorcito,blanco,suigus,bonOBon],mariano.golosinasCompradas()
-		assert.that([triple, alfajorcito, blanco],mariano.golosinasDeSabor("chocolate"))
+		assert.equals([blanco, suigus, bonOBon,triple],mariano.golosinasCompradas()
+		assert.equals([ blanco, triple],mariano.golosinasDeSabor("chocolate"))
 	}
 	test"Sabores"{
 		mariano.comprar(triple)
-		assert.equals([triple, blanco,suigus,bonOBon],mariano.golosinasCompradas())
-		assert.equals(["chocolate","frutilla"],mariano.sabores())
+		assert.equals([blanco,suigus,bonOBon,triple],mariano.golosinasCompradas())
+		assert.equals(#{"chocolate","frutilla"},mariano.sabores())
 	}
 	test "Golosina mas Cara"{
 		assert.equals(blanco,mariano.golosinaMasCara())
